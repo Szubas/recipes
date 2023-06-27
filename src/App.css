@@ -3,12 +3,12 @@
 }
 
 .Header {
-    background-color: #00e6ad81;
+    background-color: bisque;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid transparent;
+    border-bottom: 3px solid #eed0d0;
 }
 
 .Content {
@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .Btn {
@@ -24,13 +25,14 @@
     font-size: 20px;
     font-weight: bold;
     color: #000;
-    background-color: #00e6add2;
+    background-color: #eed0d0;
     border-radius: 10px;
-    border: 0px;
+    border: 2px solid black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .Btn:hover {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
+    background-color: white;
+    cursor: pointer;
 }

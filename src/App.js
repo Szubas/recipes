@@ -1,5 +1,8 @@
 import "./App.css";
 import { AllRecipes } from "./pages/AllRecipes"
+import { AddRecipe } from "./pages/AddRecipe"
+import { EditRecipe } from "./pages/EditRecipe"
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -7,9 +10,12 @@ function App() {
       <div className="Header">
         <h1>Recipes</h1>
       </div>
-      <button className="Btn">Add New</button>
       <div className="Content">
-        <AllRecipes />
+        <Routes>
+          <Route path="/" element={<AllRecipes />} />
+          <Route path="/addrecipe" element={<AddRecipe />} />
+          <Route path="/editrecipe" element={<EditRecipe />} />
+        </Routes>
       </div>
     </div>
   );

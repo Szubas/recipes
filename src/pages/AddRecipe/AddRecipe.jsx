@@ -1,9 +1,12 @@
+import { AddForm } from "../../components/AddForm";
 import "./AddRecipe.css";
+import { Link } from "react-router-dom";
 
 export const AddRecipe = () => {
     return(
         <>
-            <h2>Add Recipe</h2>
+            <Link to="/"  className="Btn">Back</Link>
+            <AddForm />
         </>
     );
 }

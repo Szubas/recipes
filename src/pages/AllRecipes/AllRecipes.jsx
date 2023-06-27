@@ -1,9 +1,12 @@
 import "./AllRecipes.css";
+import { AllRecipesList } from "../../components/AllRecipesList/AllRecipesList";
+import { Link } from "react-router-dom";
 
 export const AllRecipes = () => {
     return(
         <>
-            <h2>All Recipes</h2>
+            <Link to="/addrecipe"  className="Btn">Add New</Link>
+            <AllRecipesList />
         </>
     );
 }
