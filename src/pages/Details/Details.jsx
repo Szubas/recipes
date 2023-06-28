@@ -1,7 +1,7 @@
 import { RecipeDetails } from "../../components/RecipeDetails/RecipeDetails"
 import { Link, useLocation } from "react-router-dom"
 
-export const Details = (props) => {
+export const Details = () => {
     const {state} = useLocation();
 
     return(
