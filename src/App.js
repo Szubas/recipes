@@ -3,6 +3,7 @@ import { AllRecipes } from "./pages/AllRecipes"
 import { AddRecipe } from "./pages/AddRecipe"
 import { EditRecipe } from "./pages/EditRecipe"
 import { Routes, Route } from "react-router-dom";
+import { Details } from "./pages/Details/Details";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<AllRecipes />} />
           <Route path="/addrecipe" element={<AddRecipe />} />
           <Route path="/editrecipe" element={<EditRecipe />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import "./AllRecipes.css";
 import { AllRecipesList } from "../../components/AllRecipesList/AllRecipesList";
 import { Link } from "react-router-dom";
 
