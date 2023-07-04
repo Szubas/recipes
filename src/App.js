@@ -4,6 +4,8 @@ import { AddRecipe } from "./pages/AddRecipe"
 import { EditRecipe } from "./pages/EditRecipe"
 import { Routes, Route } from "react-router-dom";
 import { Details } from "./pages/Details/Details";
+import { LogIn } from "./pages/LogIn";
+import { Register } from "./pages/Register";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/addrecipe" element={<AddRecipe />} />
           <Route path="/editrecipe" element={<EditRecipe />} />
           <Route path="/details" element={<Details />} />
+          <Route path="/login" element={<LogIn />}/>
+          <Route path="/register" element={<Register />}/>
         </Routes>
       </div>
     </div>
