@@ -6,7 +6,7 @@ export const EditRecipe = () => {
 
     return(
         <>
-            <Link to="/" className="Btn">Back</Link>
+            <Link to="/home" className="Btn">Back</Link>
             <h2>Edit Recipe</h2>
             <EditForm id={state.id} title={state.title} type={state.type} igredients={state.igredients} description={state.description}/>
         </>

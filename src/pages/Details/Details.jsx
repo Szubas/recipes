@@ -6,7 +6,7 @@ export const Details = () => {
 
     return(
         <>
-            <Link to="/" className="Btn">Back</Link>
+            <Link to="/home" className="Btn">Back</Link>
             <RecipeDetails title={state.title} type={state.type} igredients={state.igredients} description={state.description}/>
         </>
     )

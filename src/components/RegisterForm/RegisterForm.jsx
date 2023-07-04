@@ -17,18 +17,18 @@ export const RegisterForm = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
-                navigate("/login")
+                navigate("/")
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
+                window.alert(errorMessage);
             });
     }
     return (
         <>
             <form className="form" onSubmit={onSubmit}>
-                <Link to="/login"><input type="button" className="Btn" value="Back to log in" /></Link>
                 <h1>Register</h1>
                 <div className="label_input">
                     <label>First name: </label>

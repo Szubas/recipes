@@ -9,7 +9,7 @@ export const EditForm = (props) => {
         axios.put(`https://recipes-af2a2-default-rtdb.europe-west1.firebasedatabase.app/recipes/${props.id}.json`, data)
         .then(response => {
             console.log(response);
-            navigate("/")
+            navigate("/home")
           })
     }
 

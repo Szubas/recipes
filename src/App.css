@@ -41,11 +41,19 @@
     border: 2px solid black;
     text-decoration: none;
     cursor: pointer;
+    transition: 1s;
 }
 
 .Btn:hover {
+    transition: 1s;
     background-color: white;
     cursor: pointer;
+}
+
+.loguot_btn {
+    position: absolute;
+    left: 10%;
+    top: 10px;
 }
 
 .form {
