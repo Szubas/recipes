@@ -23,10 +23,8 @@
 
 .pagination a {
     padding: 10px;
-    margin: 0 5px;
-    border-radius: 5px;
-    border: 1px solid #6c7ac9;
-    color: #6c7ac9;
+    margin-right: 0 5px;
+    color: black;
 }
 
 .pagination__link {
@@ -34,13 +32,48 @@
 }
 
 .pagination__link--active a {
-    color: #fff;
-    background: #6c7ac9;
+    color: black;
+    background: #eed0d0;
 }
 
 .pagination__link--disabled a {
     color: rgb(198, 197, 202);
-    border: 1px solid rgb(198, 197, 202);
+}
+
+input {
+    padding: 10px;
+    margin: 15px;
+    width: 200px;
+    border: transparent;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 
+@media only screen and (max-width: 600px) {
+    input {
+        font-size: 10px;
+    }
+
+    .item {
+        font-size: 10px;
+        margin: 2px;
+    }
+
+    .item div {
+        margin-right: 10px;
+    }
+    
+    .item_btns{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .item_btns button {
+        margin: 2px;
+        padding: 2px;
+    }
+
+}
