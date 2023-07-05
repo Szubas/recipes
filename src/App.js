@@ -2,10 +2,11 @@ import "./App.css";
 import { AllRecipes } from "./pages/AllRecipes"
 import { AddRecipe } from "./pages/AddRecipe"
 import { EditRecipe } from "./pages/EditRecipe"
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Details } from "./pages/Details/Details";
 import { LogIn } from "./pages/LogIn";
 import { Register } from "./pages/Register";
+import { MyRecipes } from "./pages/MyRecipes";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/details" element={<Details />} />
           <Route path="/" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/myrecipes" element={<MyRecipes />} />
         </Routes>
       </div>
     </div>

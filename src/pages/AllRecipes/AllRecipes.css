@@ -1,0 +1,11 @@
+.loguot_btn {
+    position: absolute;
+    left: 10%;
+    top: 10px;
+}
+
+.myrecipes_btn {
+    position: absolute;
+    right: 10%;
+    top: 10px;
+}
