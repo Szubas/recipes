@@ -31,13 +31,6 @@ export const AllRecipesList = () => {
             });
     }
 
-    const delRecipe = (id) => {
-        axios.delete(`https://recipes-af2a2-default-rtdb.europe-west1.firebasedatabase.app/recipes/${id}.json`)
-            .then(response => {
-                getRecipes()
-            })
-
-    }
 
     const handlePageClick = ({ selected: selectedPage }) => {
         setCurrentPage(selectedPage);
@@ -69,8 +62,6 @@ export const AllRecipesList = () => {
                                     <div>{item.type}</div>
                                     <div className="item_btns">
                                         <Link to="/details" state={{ title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Details</button></Link>
-                                        <Link to="/editrecipe" state={{ id: item.id, title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Edit</button></Link>
-                                        {/* <button onClick={() => { delRecipe(item.id) }} className="Btn">Delete</button> */}
                                     </div>
                                 </div>
                             </>
