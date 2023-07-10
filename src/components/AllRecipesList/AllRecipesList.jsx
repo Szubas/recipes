@@ -70,7 +70,7 @@ export const AllRecipesList = () => {
                                     <div className="item_btns">
                                         <Link to="/details" state={{ title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Details</button></Link>
                                         <Link to="/editrecipe" state={{ id: item.id, title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Edit</button></Link>
-                                        <button onClick={() => { delRecipe(item.id) }} className="Btn">Delete</button>
+                                        {/* <button onClick={() => { delRecipe(item.id) }} className="Btn">Delete</button> */}
                                     </div>
                                 </div>
                             </>

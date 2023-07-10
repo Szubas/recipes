@@ -96,6 +96,35 @@
     background-color: white;
 }
 
+@media only screen and (max-width: 900px) {
+
+    .formContent{
+        width: 75%;
+    }
+
+    input{
+        width: 200px;
+    }
+
+    .Content {
+        font-size: 15px;
+        margin: 0;
+        padding: 0;
+        width: 500px;
+    }
+
+    .Btn {
+        font-size: 15px;
+    }
+
+    .label_input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
 @media only screen and (max-width: 600px) {
 
     .formContent{
@@ -108,19 +137,10 @@
 
     .Content {
         font-size: 10px;
-        margin: 0;
-        padding: 0;
         width: 300px;
     }
 
     .Btn {
         font-size: 10px;
-    }
-
-    .label_input {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
     }
 }
