@@ -19,7 +19,7 @@
 
 .commentssection {
     width: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 300px;
 }
 
@@ -38,18 +38,28 @@
     font-weight: bold;
 }
 
+.commentbtn {
+    padding: 3px;
+    font-size: 15px;
+}
+
 @media only screen and (max-width: 600px){
     .commentarea {
         width: 200px;
-        height: 75px;
+        height: 30px;
     }
 
     .commentssection {
-        width: 200px;
+        width: 250px;
     }
 
     .comment p {
         font-size: 15px;
+    }
+
+    .commentbtn {
+        padding: 2px;
+        font-size: 10px;
     }
 }
 

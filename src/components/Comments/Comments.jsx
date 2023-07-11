@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import axios from 'axios'
+import { DeleteModal } from '../DeleteModal/DeleteModal'
 
 const PER_PAGE = 5;
 
@@ -11,9 +12,32 @@ export const Comments = (props) => {
     const [comments, setComments] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [text, setText] = useState('')
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [modalData, setModalData] = useState(null);
     const pageCount = Math.ceil(comments.length / PER_PAGE);
     const user = localStorage.getItem("UserMail")
     const currentRecipe = props.recipe
+
+    const delComment = (id) => {
+        axios.delete(`https://recipes-af2a2-default-rtdb.europe-west1.firebasedatabase.app/comments/${id}.json`)
+            .then(response => {
+                getComments()
+            })
+    }
+
+    const onConfirmHandler = (id) => {
+        delComment(id)
+        closeDeleteModal()
+    }
+
+    const handleIsOpen = (data) => {
+        setModalData(data)
+        setShowDeleteModal(true)
+    }
+
+    const closeDeleteModal = () => {
+        setShowDeleteModal(false)
+    }
 
     const onSubmit = (data) => {
         axios.post('https://recipes-af2a2-default-rtdb.europe-west1.firebasedatabase.app/comments.json', data)
@@ -65,12 +89,12 @@ export const Comments = (props) => {
                     {/* wiem że nie tak ale działa */}
                     <input {...register("user")} value={user} hidden />
                     <input {...register("recipe")} value={props.recipe} hidden />
-                    <textarea {...register("text")} value={text} onChange={(e) => {setText(e.target.value)}} placeholder="Write comment" className='commentarea' maxLength={255}/>
+                    <textarea {...register("text")} value={text} onChange={(e) => { setText(e.target.value) }} placeholder="Write comment" className='commentarea' maxLength={255} />
                     <input type="submit" value="Add" className='Btn' />
                 </form>
             </div>
             <h2>Komentarze:</h2>
-            <div className='commentssection'>    
+            <div className='commentssection'>
                 {
                     comments
                         .map((item) => (
@@ -78,7 +102,11 @@ export const Comments = (props) => {
                                 <div key={item.id} className='comment'>
                                     <p>{item.user}:</p>
                                     <div>{item.text}</div>
+                                    {
+                                        item.user === user && <button onClick={() => handleIsOpen(item)} className='commentbtn Btn'>Delete</button>
+                                    }
                                 </div>
+                                {showDeleteModal && <DeleteModal onCancel={closeDeleteModal} onConfirm={() => { onConfirmHandler(modalData.id) }} title={"comment"} id={modalData.id} />}
                             </>
                         ))
                         .slice(offset, offset + PER_PAGE)

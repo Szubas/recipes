@@ -62,7 +62,7 @@ export const AllRecipesList = () => {
                                     <div>{item.title}</div>
                                     <div>{item.type}</div>
                                     <div className="item_btns">
-                                        <Link to="/details" state={{ item: item}}><button className="Btn">Details</button></Link>
+                                        <Link to="/details" state={{ item: item }}><button className="Btn">Details</button></Link>
                                     </div>
                                 </div>
                             </>
