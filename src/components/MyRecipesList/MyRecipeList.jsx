@@ -73,19 +73,19 @@ export const MyRecipeList = () => {
             <div>
                 {
                     recipes
+                        .slice(offset, offset + PER_PAGE)
                         .filter((item => {
                             return search.toLowerCase() === ''
                                 ? item
                                 : item.title.toLowerCase().includes(search);
                         }))
-                        .slice(offset, offset + PER_PAGE)
                         .map((item) => (
                             <>
                                 <div key={item.id} className="item">
                                     <div>{item.title}</div>
                                     <div>{item.type}</div>
                                     <div className="item_btns">
-                                        <Link to="/details" state={{ title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Details</button></Link>
+                                        <Link to="/details" state={{ item: item }}><button className="Btn">Details</button></Link>
                                         <Link to="/editrecipe" state={{ id: item.id, title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Edit</button></Link>
                                         <button onClick={() => handleIsOpen(item)} className="Btn">Delete</button>
                                     </div>
@@ -102,13 +102,16 @@ export const MyRecipeList = () => {
                 pageCount={pageCount}
                 pageRangeDisplayed={1}
                 marginPagesDisplayed={1}
+                renderOnZeroPageCount={null}
+                breakLabel={".."}
+                initialPage={0}
                 onPageChange={handlePageClick}
                 containerClassName={"pagination"}
                 previousLinkClassName={"pagination__link"}
                 nextLinkClassName={"pagination__link"}
                 disabledClassName={"pagination__link--disabled"}
                 activeClassName={"pagination__link--active"}
-            ></ReactPaginate>
+            />
         </>
     );
 }

@@ -29,6 +29,7 @@ export const AllRecipesList = () => {
                 }
                 setRecipes(dataRecipes);
             });
+
     }
 
 
@@ -49,19 +50,19 @@ export const AllRecipesList = () => {
             <div>
                 {
                     recipes
+                        .slice(offset, offset + PER_PAGE)
                         .filter((item => {
                             return search.toLowerCase() === ''
                                 ? item
                                 : item.title.toLowerCase().includes(search);
                         }))
-                        .slice(offset, offset + PER_PAGE)
                         .map((item, id) => (
                             <>
                                 <div key={id} className="item">
                                     <div>{item.title}</div>
                                     <div>{item.type}</div>
                                     <div className="item_btns">
-                                        <Link to="/details" state={{ title: item.title, type: item.type, igredients: item.ingredients, description: item.description }}><button className="Btn">Details</button></Link>
+                                        <Link to="/details" state={{ item: item}}><button className="Btn">Details</button></Link>
                                     </div>
                                 </div>
                             </>
@@ -74,6 +75,9 @@ export const AllRecipesList = () => {
                 pageCount={pageCount}
                 pageRangeDisplayed={1}
                 marginPagesDisplayed={1}
+                renderOnZeroPageCount={null}
+                breakLabel={".."}
+                initialPage={0}
                 onPageChange={handlePageClick}
                 containerClassName={"pagination"}
                 previousLinkClassName={"pagination__link"}

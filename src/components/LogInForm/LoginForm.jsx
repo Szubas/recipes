@@ -14,6 +14,7 @@ export const LoginForm = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            localStorage.setItem("UserMail", email);
             localStorage.setItem("Uid", user.uid);
             navigate("/home")
             console.log(user);
